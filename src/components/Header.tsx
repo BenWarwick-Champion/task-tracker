@@ -1,7 +1,14 @@
-const Header = () => {
+import Button from "./Button"
+
+interface HeaderProps {
+    title: string,
+}
+
+const Header = (props: HeaderProps) => {
     return (
-        <header>
-            <h1>Hello this is a header</h1>
+        <header className="header">
+            <h1>{props.title}</h1>
+            <Button text="Add"/>
         </header>
     )
 }
