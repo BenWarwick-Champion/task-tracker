@@ -1,5 +1,14 @@
 /// <reference types="react-scripts" />
 
+interface AddTaskProps {
+    onAdd: (task: NewTask) => void,
+}
+
+type NewTask = {
+    text: string,
+    day: string,
+    reminder: boolean
+}
 
 interface TasksProps {
     tasks: Array<Task>,

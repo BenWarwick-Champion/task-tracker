@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AddTask from './components/AddTask';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 
@@ -6,24 +7,32 @@ function App() {
 
   const [tasks, setTasks] = useState<Array<Task>>([
     {
-        id: 1,
+        id: 0,
         text: 'Meeting at school',
         day: 'April 1st at 13:00',
         reminder: true,
     },
     {
-        id: 2,
+        id: 1,
         text: 'Work meeting',
         day: 'April 2nd at 14:00',
         reminder: false,
     },
     {
-        id: 3,
+        id: 2,
         text: 'Food shopping',
         day: 'April 3rd at 15:00',
         reminder: true,
     }
-  ])
+  ]);
+
+
+  // Add Task
+  const addTask = (task: NewTask) => {
+    const id = tasks.length;
+    const newTask: Task = {id: id, ...task};
+    setTasks([...tasks, newTask]);
+  }
 
   // Delete Task
   const deleteTask = (id: number) => {
@@ -39,6 +48,7 @@ function App() {
   return (
     <div className="container">
       <Header title="Task Tracker" />
+      <AddTask onAdd={addTask} />
       {tasks.length > 0 
       ? <Tasks 
         tasks={tasks} 
