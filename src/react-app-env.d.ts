@@ -4,11 +4,13 @@
 interface TasksProps {
     tasks: Array<Task>,
     onDelete: (id: number) => void,
+    onToggle: (id: number) => void
 }
 
 interface TaskProps {
-    task: Task
+    task: Task,
     onClick: (id: number) => void,
+    onToggle: (id: number) => void
 }
 
 interface ButtonProps {

@@ -8,6 +8,7 @@ export const Tasks = (props: TasksProps) => {
                 key={task.id} 
                 task={task} 
                 onClick={props.onDelete}
+                onToggle={props.onToggle}
               />
           ))}
         </>
