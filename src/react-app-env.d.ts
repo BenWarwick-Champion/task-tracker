@@ -22,6 +22,11 @@ interface TaskProps {
     onToggle: (id: number) => void
 }
 
+interface HeaderProps {
+    showAdd: boolean,
+    onAdd: () => void
+}
+
 interface ButtonProps {
     text: string,
     onClick(): void

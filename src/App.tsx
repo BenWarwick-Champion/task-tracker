@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 
 function App() {
-
+  const [showAddTask, setShowAddTask] = useState<boolean>(false);
   const [tasks, setTasks] = useState<Array<Task>>([
     {
         id: 0,
@@ -47,8 +47,11 @@ function App() {
 
   return (
     <div className="container">
-      <Header title="Task Tracker" />
-      <AddTask onAdd={addTask} />
+      <Header 
+        showAdd={showAddTask}
+        onAdd={() => setShowAddTask(!showAddTask)} 
+      />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 
       ? <Tasks 
         tasks={tasks} 
