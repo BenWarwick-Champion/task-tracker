@@ -29,6 +29,7 @@ interface HeaderProps {
 
 interface ButtonProps {
     text: string,
+    color: string,
     onClick(): void
 }
 

@@ -1,6 +1,6 @@
 import Task from "./Task";
 
-export const Tasks = (props: TasksProps) => {
+const Tasks = (props: TasksProps) => {
     return (
         <>
           {props.tasks.map((task) => (
