@@ -4,6 +4,8 @@ A simple task tracking application built with React and Typescript.
 
 You should be able to add a task with a date and time, and choose whether to set a reminder. A list of the tasks will then be displayed underneath.
 
+Visit the [live demo here](https://benwarwick-champion.github.io/task-tracker/).
+
 ### Usage:
 
 - Double click on a task to toggle it's reminder status
